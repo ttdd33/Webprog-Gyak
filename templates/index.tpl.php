@@ -22,7 +22,7 @@
 					<?php foreach ($oldalak as $url => $oldal) { ?>
 						<?php if(! isset($_SESSION['login']) && $oldal['menun'][0] || isset($_SESSION['login']) && $oldal['menun'][1]) { ?>
 							<li<?= (($oldal == $keres) ? ' class="active"' : '') ?>>
-							<a href="<?= ($url == '/') ? '.' : $url ?>">
+							<a href="<?= ($url == '/') ? '.' : '?'.$url ?>">
 							<?= $oldal['szoveg'] ?></a>
 							</li>
 						<?php } ?>
