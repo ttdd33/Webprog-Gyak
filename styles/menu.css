@@ -20,7 +20,7 @@ nav {
 
 .top-level-menu {
     display: flex;
-    width: 100%;
+    width: auto;
     margin: 0;
     padding: 0;
 }

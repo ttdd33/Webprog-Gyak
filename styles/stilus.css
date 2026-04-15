@@ -1,4 +1,6 @@
-
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     padding: 0;
@@ -69,7 +71,9 @@ div#wrapper {
 }
 
 aside {
-    vertical-align: top;
+    min-width: max-content;
+    flex-shrink: 0;
+    background-color: #FF6600;
 }
 
 nav {
@@ -82,11 +86,15 @@ nav {
 nav ul {
     list-style-type: none;
     margin: 0px;
-    padding: 15px 0px;
+    padding: 0px;
+    width: 100%;
 }
 
 nav ul li {
-    padding: 0px 15px;;
+    width: 100%;
+    text-align: center;
+    padding: 0px 15px;
+    display: block;
 }
 
 nav ul li.active {
@@ -99,7 +107,7 @@ nav ul a {
 }
 
 div#content {
-    width: 100%;
+    flex: 1;
     background-color: #CFCFCF;
     padding: 15px;
 }
@@ -123,7 +131,6 @@ footer {
 
 .main-row {
     display: flex;
-    flex-direction: row;
-    flex: 1; /* Ez tolja le a footert */
-    width: 100%;
+    flex: 1; 
+    align-items: stretch;
 }
