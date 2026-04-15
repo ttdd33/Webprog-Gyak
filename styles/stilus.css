@@ -1,21 +1,74 @@
-header {
-    border-radius: 10px;
-    background-color: yellow;
-    padding: 10px;
-    margin: 10px;
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;          
+    flex-direction: column; 
+    min-height: 100vh;
+    
 }
+
+header {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #454545;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    text-align: left;
+    
+}
+
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;    
+    gap: 10px;               
+    margin-right: 10px;
+}
+
+/* Az ikon méretezése */
+.user-icon {
+    width: 25px;
+    height: 25px;
+    display: block;
+}
+
+/* A név szövegének igazítása */
+.user-name {
+    font-size: 0.9em;
+             /* Segít a precíz középre igazításban */
+}
+
 
 header img {
     float: left;
-    margin: 20px 10px 0px 10px;
+    margin: 0;
+    width: 150px;      /* Állítsd be a neked tetsző méretet */
+    height: auto;      /* Megtartja az arányokat */
+
 }
 
 div#wrapper {
-    margin: 10px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    flex: 1;
 }
 
 aside {
-    display: table-cell;
     vertical-align: top;
 }
 
@@ -46,10 +99,8 @@ nav ul a {
 }
 
 div#content {
-    display: table-cell;
     width: 100%;
-    border-radius: 10px;
-    background-color: #99FFCC;
+    background-color: #CFCFCF;
     padding: 15px;
 }
 
@@ -63,8 +114,16 @@ div#content img{
 }
 
 footer {
-    border-radius: 10px;
-    margin: 10px;
-    padding: 5px 20px;
-    background-color: #CC99FF;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #FF0000;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.main-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1; /* Ez tolja le a footert */
+    width: 100%;
 }

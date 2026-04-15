@@ -1,12 +1,12 @@
 <?php
 $ablakcim = array(
-    'cim' => 'Mini honlap Kft.',
+    'cim' => 'Forma1',
 );
 
 $fejlec = array(
     'kepforras' => 'logo.png',
     'kepalt' => 'logo',
-	'cim' => 'Mini honlap',
+	'cim' => 'Forma 1',
 	'motto' => ''
 );
 
@@ -16,15 +16,21 @@ $lablec = array(
 );
 
 $oldalak = array(
-	'/' => array('fajl' => 'cimlap', 'szoveg' => 'Címlap', 'menun' => array(1,1)),
-	'bemutatkozas' => array('fajl' => 'bemutatkozas', 'szoveg' => 'Bemutatkozás', 'menun' => array(1,1)),
-	'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat', 'menun' => array(1,1)),
-	'cikkek' => array('fajl' => 'cikkek', 'szoveg' => 'Cikkek', 'menun' => array(1,1)),
-    'tablazat' => array('fajl' => 'tablazat', 'szoveg' => 'Táblázat', 'menun' => array(1,1)),
-    'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés', 'menun' => array(1,0)),
-    'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
-    'belep' => array('fajl' => 'belep', 'szoveg' => '', 'menun' => array(0,0)),
-    'regisztral' => array('fajl' => 'regisztral', 'szoveg' => '', 'menun' => array(0,0))
+    '/' => array('szoveg' => 'Címlap', 'fajl' => 'cimlap'),
+    'csapatok' => array('szoveg' => 'Csapatok', 'fajl' => 'csapatok', 'almenu' => array(
+        'ferrari' => array('szoveg' => 'Ferrari', 'fajl' => 'ferrari'),
+        'mercedes' => array('szoveg' => 'Mercedes', 'fajl' => 'mercedes')
+    )),
+
+    'bemutatkozas' => array('fajl' => 'bemutatkozas', 'szoveg' => 'Bemutatkozás'),
+	'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat'),
+	'cikkek' => array('fajl' => 'cikkek', 'szoveg' => 'Cikkek'),
+    'tablazat' => array('fajl' => 'tablazat', 'szoveg' => 'Táblázat'),
+    'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés'),
+    'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés'),
+    'belep' => array('fajl' => 'belep', 'szoveg' => ''),
+    'regisztral' => array('fajl' => 'regisztral', 'szoveg' => '')
+
 );
 
 $hiba_oldal = array ('fajl' => '404', 'szoveg' => 'A keresett oldal nem található!');

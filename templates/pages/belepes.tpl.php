@@ -1,4 +1,4 @@
-    <form action = "?belep" method = "post">
+    <form action = "?oldal=belep" method = "post">
       <fieldset>
         <legend>Bejlentkezés</legend>
         <br>
@@ -9,7 +9,7 @@
       </fieldset>
     </form>
     <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form action = "?regisztral" method = "post">
+    <form action = "?oldal=regisztral" method = "post">
       <fieldset>
         <legend>Regisztráció</legend>
         <br>
