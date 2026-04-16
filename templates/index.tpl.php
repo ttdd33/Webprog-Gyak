@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php if(file_exists('./logicals/'.$keres['fajl'].'.php')) { include("./logicals/{$keres['fajl']}.php"); } ?>
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -99,9 +99,9 @@
     </nav>
 
     <div id="wrapper"> 
-        <div id="content">
+        <main id="content">
             <?php include("./templates/pages/{$keres['fajl']}.tpl.php"); ?>
-        </div>
+        </main>
         
         <footer>
             <?php if(isset($lablec['copyright'])) { ?>&copy;&nbsp;<?= $lablec['copyright'] ?> <?php } ?>

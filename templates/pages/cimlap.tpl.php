@@ -1,6 +1,8 @@
 <!-- FORRÁS: Megoldasok\08-Többszintű menü - Bootstrap-Reszponzív-tervezés/2-Bootstrap-reszponzív menü minta, oldal-02.html-->
 <div class="container">
+    <section>
     <h2>Köszöntés</h2>
+    </section>
     <div class="row">
         <!-- BAL OLDAL -->
         <div class="col-md-6">
