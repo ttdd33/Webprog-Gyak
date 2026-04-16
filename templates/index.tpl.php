@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="./styles/stilus.css" type="text/css">
 	<link rel="stylesheet" href="./styles/menu.css" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 	<?php if(file_exists('./styles/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="./styles/<?= $keres['fajl']?>.css" type="text/css"><?php } ?>
 </head>
 <body>
@@ -30,32 +35,55 @@
         <?php } ?>
     </header>
 
-    <nav>
-    <ul class="top-level-menu">
-        <?php foreach ($oldalak as $url => $oldal) { 
-            // 1. Ha be vagyunk lépve, ne mutassa a "Belépés" menüpontot
-            if(isset($_SESSION['login']) && $url == 'belepes') continue;
-            
-            // 2. Ha NEM vagyunk belépve, ne mutassa a "Kilépés" menüpontot
-            if(!isset($_SESSION['login']) && $url == 'kilepes') continue;
-            
-            // 3. A rejtett (szöveg nélküli) oldalakat (pl. regisztral, belep) ne tegye a menübe
-            if($oldal['szoveg'] == "") continue;
-        ?>
-            <li>
-                <a href="<?= ($url == '/') ? '.' : ('?oldal=' . $url) ?>">
-                    <?= $oldal['szoveg'] ?>
-                </a>
-                <?php if (isset($oldal['almenu'])) { ?>
-                    <ul class="second-level-menu">
-                        <?php foreach($oldal['almenu'] as $alurl => $aloldal) { ?>
-                            <li><a href="?oldal=<?= $alurl ?>"><?= $aloldal['szoveg'] ?></a></li>
+<nav class="navbar navbar-expand-lg custom-nav">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <?php foreach ($oldalak as $url => $oldal) { 
+                    if(isset($_SESSION['login']) && $url == 'belepes') continue;
+                    if(!isset($_SESSION['login']) && $url == 'kilepes') continue;
+                    if($oldal['szoveg'] == "") continue;
+                    
+                    $hasSubmenu = isset($oldal['almenu']);
+                ?>
+                    <li class="nav-item <?= $hasSubmenu ? 'dropdown' : '' ?>">
+                        <a class="nav-link <?= $hasSubmenu ? 'dropdown-toggle' : '' ?>" 
+                           href="<?= ($url == '/') ? '.' : ('?oldal=' . $url) ?>"
+                           <?= $hasSubmenu ? 'data-bs-toggle="dropdown" data-bs-auto-close="outside"' : '' ?>>
+                            <?= $oldal['szoveg'] ?>
+                        </a>
+                        
+                        <?php if ($hasSubmenu) { ?>
+                            <ul class="dropdown-menu">
+                                <?php foreach($oldal['almenu'] as $alurl => $aloldal) { 
+                                    $hasThirdLevel = isset($aloldal['almenu']);
+                                ?>
+                                    <li class="<?= $hasThirdLevel ? 'dropend' : '' ?>">
+                                        <a class="dropdown-item <?= $hasThirdLevel ? 'dropdown-toggle' : '' ?>" 
+                                           href="?oldal=<?= $alurl ?>"
+                                           <?= $hasThirdLevel ? 'data-bs-toggle="dropdown"' : '' ?>>
+                                            <?= $aloldal['szoveg'] ?>
+                                        </a>
+                                        <?php if ($hasThirdLevel) { ?>
+                                            <ul class="dropdown-menu">
+                                                <?php foreach($aloldal['almenu'] as $harmadikUrl => $harmadikOldal) { ?>
+                                                    <li><a class="dropdown-item" href="?oldal=<?= $harmadikUrl ?>"><?= $harmadikOldal['szoveg'] ?></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                        <?php } ?>
+                                    </li>
+                                <?php } ?>
+                            </ul>
                         <?php } ?>
-                    </ul>
+                    </li>
                 <?php } ?>
-            </li>
-        <?php } ?>
-    </ul>
+            </ul>
+        </div>
+    </div>
 </nav>
 
     <div id="wrapper"> <div id="content">

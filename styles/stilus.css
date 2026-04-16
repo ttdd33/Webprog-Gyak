@@ -1,6 +1,8 @@
+
 * {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -8,24 +10,19 @@ body {
     display: flex;          
     flex-direction: column; 
     min-height: 100vh;
-    
+    font-family: sans-serif; 
 }
 
 header {
     width: 100%;
-    display: block;
-    box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
     background-color: #454545;
     display: flex;
     justify-content: space-between; 
     align-items: center;
     padding: 10px 20px;
-    text-align: left;
-    
+    font-family: 'Orbitron', sans-serif;
+    color: white;
 }
-
-
 
 .header-left {
     display: flex;
@@ -33,77 +30,129 @@ header {
     gap: 15px;
 }
 
+header img {
+    width: 150px;
+    height: auto;
+}
+
 .user-box {
     display: flex;
     align-items: center;    
-    gap: 10px;               
-    margin-right: 10px;
+    gap: 10px;
 }
 
-/* Az ikon méretezése */
 .user-icon {
     width: 25px;
     height: 25px;
-    display: block;
-}
-
-/* A név szövegének igazítása */
-.user-name {
-    font-size: 0.9em;
-             /* Segít a precíz középre igazításban */
 }
 
 
-header img {
-    float: left;
+.custom-nav {
+    background-color: #454545 !important; 
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 0;
+    padding: 0;
+}
+
+.custom-nav .nav-link {
+    color: #CFCFCF !important;
+    padding: 10px 15px !important;
+}
+
+/* Főmenü hover */
+.custom-nav .nav-item:hover > .nav-link {
+    background-color: #FF0000 !important; 
+}
+
+/* Legördülő menük (2. és 3. szint) */
+.dropdown-menu {
+    background-color: #333 !important;
+    border: none;
+    border-radius: 0;
     margin: 0;
-    width: 150px;      /* Állítsd be a neked tetsző méretet */
-    height: auto;      /* Megtartja az arányokat */
-
+    padding: 0;
 }
 
+.dropdown-item {
+    color: #CFCFCF !important;
+    padding: 10px 20px;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-item:hover {
+    background-color: #FF0000 !important;
+}
+
+/* Asztali nézet */
+@media (min-width: 992px) {
+    /* Hoverre nyíló menük */
+    .dropdown:hover > .dropdown-menu,
+    .dropend:hover > .dropdown-menu {
+        display: block !important;
+    }
+
+  
+    .dropdown-menu .dropend:not(:hover) > .dropdown-menu {
+        display: none !important;
+    }
+
+  
+    .dropend > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: 0;
+    }
+}
+
+/* Hamburgermenü */
+@media (max-width: 991px) {
+
+    .navbar-expand-lg .navbar-toggler {
+        display: block !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 5px !important;
+        z-index: 1060;
+    }
+
+.custom-nav {
+        background-color: #454545 !important;
+        min-height: 50px;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none !important;
+        background-color: #454545 !important; 
+        width: 100%;
+        margin-top: 45px;
+        padding: 10px;
+    }
+
+    .navbar-expand-lg .navbar-collapse.show {
+        display: block !important;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dropend > .dropdown-menu {
+        position: static !important;
+        margin-left: 20px !important;
+        background-color: #333 !important;
+        display: block !important;
+        border-left: 2px solid #FF0000;
+    }
+}
+
+/* Tartalom és Wrapper */
 div#wrapper {
-    margin: 0px;
+    margin: 0;
     width: 100%;
     display: flex;
     flex-direction: column; 
     flex: 1;
-}
-
-aside {
-    min-width: max-content;
-    flex-shrink: 0;
-    background-color: #FF6600;
-}
-
-nav {
-    margin: 0px 10px 0px 0px;
-    top: 0px;
-    border-radius: 10px;
-    background-color: #FF6600;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-}
-
-nav ul li {
-    width: 100%;
-    text-align: center;
-    padding: 0px 15px;
-    display: block;
-}
-
-nav ul li.active {
-    border-right: 5px solid blue;
-}
-
-nav ul a {
-    text-decoration: none;
-    color: blue;
 }
 
 div#content {
@@ -112,7 +161,7 @@ div#content {
     padding: 15px;
 }
 
-div#content img{
+div#content img {
     float: right;
     width: 20em;
     height: auto;
@@ -121,16 +170,11 @@ div#content img{
     border: 3px solid blue;
 }
 
+/* Footer */
 footer {
     width: 100%;
     padding: 10px 20px;
     background-color: #FF0000;
+    color: white;
     margin-top: auto;
-    flex-shrink: 0;
-}
-
-.main-row {
-    display: flex;
-    flex: 1; 
-    align-items: stretch;
 }
