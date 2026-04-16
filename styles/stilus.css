@@ -46,103 +46,122 @@ header img {
     height: 25px;
 }
 
-
-.custom-nav {
-    background-color: #454545 !important; 
+.navbar {
     font-family: 'Orbitron', sans-serif;
-    border-radius: 0;
     padding: 0;
 }
 
-.custom-nav .nav-link {
-    color: #CFCFCF !important;
-    padding: 10px 15px !important;
-}
-
-/* Főmenü hover */
-.custom-nav .nav-item:hover > .nav-link {
-    background-color: #FF0000 !important; 
-}
-
-/* Legördülő menük (2. és 3. szint) */
-.dropdown-menu {
-    background-color: #333 !important;
-    border: none;
-    border-radius: 0;
+.navbar-nav.top-level-menu {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    padding: 0;
 }
 
-.dropdown-item {
+.top-level-menu > li {
+    position: relative;
+}
+
+.top-level-menu > li > a {
+    display: block;
+    padding: 10px 15px;
     color: #CFCFCF !important;
-    padding: 10px 20px;
-    border-bottom: 1px solid #444;
+    text-decoration: none;
 }
 
-.dropdown-item:hover {
+.top-level-menu > li > a:hover {
     background-color: #FF0000 !important;
 }
 
-/* Asztali nézet */
-@media (min-width: 992px) {
-    /* Hoverre nyíló menük */
-    .dropdown:hover > .dropdown-menu,
-    .dropend:hover > .dropdown-menu {
-        display: block !important;
-    }
-
-  
-    .dropdown-menu .dropend:not(:hover) > .dropdown-menu {
-        display: none !important;
-    }
-
-  
-    .dropend > .dropdown-menu {
-        top: 0;
-        left: 100%;
-        margin-top: 0;
-    }
+/* 2. szint */
+.second-level-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    background: #999999;
+    z-index: 1000;
 }
 
-/* Hamburgermenü */
+.second-level-menu > li {
+    position: relative;
+    background: #999999;
+}
+
+.second-level-menu > li > a {
+    display: block;
+    padding: 10px 15px;
+    font: bold 14px Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.second-level-menu > li > a:hover {
+    background: #CCCCCC;
+    color: #000000;
+}
+
+/* 3. szint */
+.third-level-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 180px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    background: #999999;
+    z-index: 1000;
+}
+
+.third-level-menu > li {
+    background: #999999;
+}
+
+.third-level-menu > li > a {
+    display: block;
+    padding: 10px 15px;
+    font: bold 14px Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.third-level-menu > li > a:hover {
+    background: #CCCCCC;
+    color: #000000;
+}
+
+/* Hoveres nyitás - FORRÁS: tobbszintu-menu2.html */
+.top-level-menu li:hover > .second-level-menu {
+    display: block;
+}
+
+.second-level-menu li:hover > .third-level-menu {
+    display: block;
+}
+
+/* Mobilnézetben: a Bootstrap kezeli a főmenü nyitását */
+/* A belső menük ne absolute módon nyíljanak, hanem egymás alatt */
 @media (max-width: 991px) {
-
-    .navbar-expand-lg .navbar-toggler {
-        display: block !important;
-        position: absolute !important;
-        right: 15px !important;
-        top: 5px !important;
-        z-index: 1060;
-    }
-
-.custom-nav {
-        background-color: #454545 !important;
-        min-height: 50px;
-    }
-
-    .navbar-expand-lg .navbar-collapse {
-        display: none !important;
-        background-color: #454545 !important; 
-        width: 100%;
-        margin-top: 45px;
-        padding: 10px;
-    }
-
-    .navbar-expand-lg .navbar-collapse.show {
-        display: block !important;
-    }
-
-    .navbar-nav {
-        flex-direction: column;
+    .second-level-menu,
+    .third-level-menu {
+        position: static;
+        display: none;
         width: 100%;
     }
 
-    .dropend > .dropdown-menu {
-        position: static !important;
-        margin-left: 20px !important;
-        background-color: #333 !important;
-        display: block !important;
-        border-left: 2px solid #FF0000;
+    .third-level-menu {
+        margin-left: 20px;
+    }
+
+    .top-level-menu > li > a,
+    .second-level-menu > li > a,
+    .third-level-menu > li > a {
+        width: 100%;
     }
 }
 
