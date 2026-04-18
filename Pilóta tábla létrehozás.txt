@@ -8,8 +8,6 @@ CREATE TABLE pilota (
 
 <!-- UGYANAZT az adatbázist használjuk (gyakorlat7), csak plusz egy tábla lesz benne-->
 
--- Pilota tábla kiürítése
-TRUNCATE TABLE pilota;
 
 INSERT INTO pilota (az, nev, nem, szuldat, nemzet) VALUES
 (1, 'Juan-Manuel Fangio', 'F', '1911-06-24', 'argentín'),
