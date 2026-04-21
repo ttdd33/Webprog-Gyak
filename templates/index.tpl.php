@@ -30,7 +30,7 @@
         <div class="user-box">
             <img src="./images/user-symbol.png" alt="User" class="user-icon">
             <span class="user-name">
-             <strong><?= $_SESSION['csn']." ".$_SESSION['un'] ?></strong>
+             Bejelentkezett: <strong><?= $_SESSION['csn']." ".$_SESSION['un'] ?></strong> (<?= $_SESSION['login'] ?>)
             </span>
         </div>
         <?php } ?>

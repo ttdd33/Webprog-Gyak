@@ -12,11 +12,11 @@ $fejlec = array(
 
 $lablec = array(
     'copyright' => 'Copyright '.date("Y").'.',
-    'ceg' => 'Mini honlap Kft.'
+    'ceg' => 'Készítette: Harmatiné Pásztor Éva, Deák Dávid'
 );
 
 $oldalak = array(
-    '/' => array('szoveg' => 'Címlap', 'fajl' => 'cimlap'),
+    '/' => array('szoveg' => 'Föoldal', 'fajl' => 'cimlap'),
     'csapatok' => array('szoveg' => 'Csapatok', 'fajl' => 'csapatok', 'almenu' => array(
         'ferrari' => array('szoveg' => 'Ferrari', 'fajl' => 'ferrari', 
             'almenu' => array(

@@ -6,7 +6,6 @@ CREATE TABLE pilota (
     nemzet VARCHAR(50) NOT NULL
 );
 
-<!-- UGYANAZT az adatbázist használjuk (gyakorlat7), csak plusz egy tábla lesz benne-->
 
 
 INSERT INTO pilota (az, nev, nem, szuldat, nemzet) VALUES

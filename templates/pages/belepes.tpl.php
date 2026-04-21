@@ -1,6 +1,20 @@
     <form action = "?oldal=belep" method = "post">
+
+<style>
+  fieldset {
+    width: 300px;
+    margin: 0 auto;
+    text-align: left; 
+  }
+  h3 {
+    text-align: center;
+  }
+</style>
+
+
+
       <fieldset>
-        <legend>Bejlentkezés</legend>
+        <legend>Bejelentkezés</legend>
         <br>
         <input type="text" name="felhasznalo" placeholder="felhasználó" required><br><br>
         <input type="password" name="jelszo" placeholder="jelszó" required><br><br>
