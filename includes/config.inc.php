@@ -17,33 +17,14 @@ $lablec = array(
 
 $oldalak = array(
     '/' => array('szoveg' => 'Föoldal', 'fajl' => 'cimlap'),
-    'csapatok' => array('szoveg' => 'Csapatok', 'fajl' => 'csapatok', 'almenu' => array(
-        'ferrari' => array('szoveg' => 'Ferrari', 'fajl' => 'ferrari', 
-            'almenu' => array(
-                'leclerc' => array('szoveg' => ' Charles Leclerc', 'fajl' => 'leclerc'),
-                'hamilton' => array('szoveg' => 'Lewis Hamilton', 'fajl' => 'hamilton')
-    )),
-
-        'mercedes' => array('szoveg' => 'Mercedes', 'fajl' => 'mercedes', 
-            'almenu' => array(
-                'russell' => array('szoveg' => 'George Russell', 'fajl' => 'russell'),
-                'antonelli' => array('szoveg' => 'Kimi Antonelli', 'fajl' => 'antonelli')
-    )),
-
-        'redbull' => array('szoveg' => 'Red Bull', 'fajl' => 'redbull', 
-            'almenu' => array(
-                'verstappen' => array('szoveg' => 'Max Verstappen', 'fajl' => 'verstappen'),
-                'hadjar' => array('szoveg' => 'Isack Hadjar', 'fajl' => 'hadjar')
-
-
-    ))
-    )),
-
-    'bemutatkozas' => array('fajl' => 'bemutatkozas', 'szoveg' => 'Bemutatkozás'),
-	'kepek' => array('fajl' => 'kepek', 'szoveg' => 'Képek'),
+    'kepek' => array('fajl' => 'kepek', 'szoveg' => 'Képek'),
     'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat'),
-	'cikkek' => array('fajl' => 'cikkek', 'szoveg' => 'Cikkek'),
-    'tablazat' => array('fajl' => 'tablazat', 'szoveg' => 'Táblázat'),
+    'tablazat' => array('fajl' => 'tablazat', 'szoveg' => 'CRUD'),
+
+    
+    //'bemutatkozas' => array('fajl' => 'bemutatkozas', 'szoveg' => 'Bemutatkozás'),
+	//'cikkek' => array('fajl' => 'cikkek', 'szoveg' => 'Cikkek'),
+
     'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés'),
     'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés'),
     'belep' => array('fajl' => 'belep', 'szoveg' => ''),

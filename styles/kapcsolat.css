@@ -1,0 +1,32 @@
+form[name="kapcsolat"] {
+    border: 2px solid #555555; 
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;  
+    width: fit-content; 
+    background-color: #f9f9f9;
+}
+
+/* A gombok egységes stílusa */
+input[type="submit"], 
+button[type="button"] {
+    background-color: #808080; 
+    color: white; 
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effektus */
+input[type="submit"]:hover, 
+button[type="button"]:hover {
+    background-color: #606060; 
+}
+
+div label {
+    display: block;
+    margin-bottom: 10px;
+}
