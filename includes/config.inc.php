@@ -16,19 +16,15 @@ $lablec = array(
 );
 
 $oldalak = array(
-    '/' => array('szoveg' => 'Föoldal', 'fajl' => 'cimlap'),
-    'kepek' => array('fajl' => 'kepek', 'szoveg' => 'Képek'),
-    'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat'),
-    'tablazat' => array('fajl' => 'tablazat', 'szoveg' => 'CRUD'),
-
-    
-    //'bemutatkozas' => array('fajl' => 'bemutatkozas', 'szoveg' => 'Bemutatkozás'),
-	//'cikkek' => array('fajl' => 'cikkek', 'szoveg' => 'Cikkek'),
-
-    'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés'),
-    'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés'),
-    'belep' => array('fajl' => 'belep', 'szoveg' => ''),
-    'regisztral' => array('fajl' => 'regisztral', 'szoveg' => '')
+    '/' => array('szoveg' => 'Föoldal', 'fajl' => 'cimlap', 'menun' => array(1,1)),
+    'kepek' => array('fajl' => 'kepek', 'szoveg' => 'Képek', 'menun' => array(1,1)),
+    'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat', 'menun' => array(1,1)),
+    'uzenetek' => array('fajl' => 'uzenetek', 'szoveg' => 'Üzenetek', 'menun' => array(0, 1)),
+    'tablazat' => array('fajl' => 'tablazat', 'szoveg' => 'CRUD', 'menun' => array(1,1)),
+    'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés','menun' => array(1,0)),
+    'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
+    'belep' => array('fajl' => 'belep', 'szoveg' => '', 'menun' => array(0,0)),
+    'regisztral' => array('fajl' => 'regisztral', 'szoveg' => '', 'menun' => array(0,0))
 
 );
 

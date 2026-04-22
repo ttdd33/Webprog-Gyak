@@ -47,11 +47,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav top-level-menu">
                 <?php foreach ($oldalak as $url => $oldal) { 
-                    if(isset($_SESSION['login']) && $url == 'belepes') continue;
-                    if(!isset($_SESSION['login']) && $url == 'kilepes') continue;
-                    if($oldal['szoveg'] == "") continue;
-                    
-                    $hasSubmenu = isset($oldal['almenu']);
+                        $belepve = isset($_SESSION['login']);
+        
+                        $lathatosag = isset($oldal['menun']) ? $oldal['menun'] : array(1, 1);
+                      
+                        if (!($belepve && $lathatosag[1]) && !(!$belepve && $lathatosag[0])) {
+                            continue;
+                        }
+
+                        if($oldal['szoveg'] == "") continue;
+                        
+                        $hasSubmenu = isset($oldal['almenu']);
                 ?>
                         <!-- ÚJ: has-submenu osztály -->
                         <!-- FORRÁS: tobbszintu-menu2.html logikája -->

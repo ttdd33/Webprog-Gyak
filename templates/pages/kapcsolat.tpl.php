@@ -10,7 +10,7 @@
 <h1>Kapcsolat</h1> 
  
 <form name="kapcsolat" action="logicals/ellenorzszerver.php" onsubmit="return ellenoriz();" method="post"> 
- 
+
         <div> 
             <label><input type="text" id="email" name="email" placeholder="E-mail (kötelező)" size="30" maxlength="40"> </label> 
             <br/> 
